@@ -18,8 +18,8 @@ Usage
 ```
 PS> Import-Module ps-autoenv
 
-$ echo "echo 'whoa'" > project/.autoenv
-$ cd project
+PS> echo "echo 'whoa'" > project/.autoenv
+PS> cd project
 whoa
 ```
 
