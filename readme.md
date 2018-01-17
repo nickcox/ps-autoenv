@@ -34,8 +34,8 @@ Configuration
 ============
 Update these properties of $autoenv at any time:
 
-AUTH_FILE: Contains a list of authorized env files, defaults to ~/.autoenv_authorized
-ENV_FILENAME: Name of the .env file, defaults to .autoenv
-ENV_LEAVE_FILENAME: Name of the .env.leave file, defaults to .autoenv.leave
-ENABLE_LEAVE: Set this to a non-falsy value in order to enable leave scripts
-ASSUME_YES: Set this variable to automatically authorize the initialization of new environments
+* AUTH_FILE: Contains a list of authorized env files, defaults to ~/.autoenv_authorized
+* ENV_FILENAME: Name of the .env file, defaults to .autoenv
+* ENV_LEAVE_FILENAME: Name of the .env.leave file, defaults to .autoenv.leave
+* ENABLE_LEAVE: Set this to a non-falsy value in order to enable leave scripts
+* ASSUME_YES: Set this variable to automatically authorize the initialization of new environments
