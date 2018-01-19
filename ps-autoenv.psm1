@@ -25,7 +25,7 @@ function AuthorizeFile($filePath) {
   Get-Content $filePath | Write-Host -ForegroundColor Green
   Write-Host ('=' * 60) -ForegroundColor Red
 
-  if ($autoenv.ASSUME_YES) {
+  if ($autoenv.ASSUME_YES -eq $true) {
     Write-Host "$([char]0x2713) Auto authorized `n" -ForegroundColor DarkYellow
     $filePath >> $autoenv.AUTH_FILE
     return $true
@@ -73,25 +73,25 @@ function EnterDirectory($dir) {
   }
 }
 
-function AutoEnv($dir) {
+function AutoEnv($newDir) {
   try {
-    if ($dir -eq $currentDir) {
+    if ($newDir -eq $currentDir) {
       return
     }
 
     LeaveDirectory $currentDir
-    EnterDirectory $dir
+    EnterDirectory $newDir
 
-    $script:currentDir = $dir
+    $script:currentDir = $newDir
   }
   catch {
-   Write-Warninging $_.Exception.Message
+    Write-Warning $_.Exception.Message
   }
 }
 
 $validateAttr = (new-object ValidateScript { AutoEnv $_; return $true })
 
-(Get-Variable pwd).attributes.Add($validateAttr)
+(Get-Variable PWD).Attributes.Add($validateAttr)
 
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
   $null = (Get-Variable pwd).attributes.Remove($validateAttr)
