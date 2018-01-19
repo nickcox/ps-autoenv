@@ -85,7 +85,7 @@ function AutoEnv($newDir) {
     $script:currentDir = $newDir
   }
   catch {
-    Write-Warning $_.Exception.Message
+    Write-Warning "Could not execute autoenv script. `n$_.Exception.Message"
   }
 }
 

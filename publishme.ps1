@@ -1,2 +1,2 @@
-Copy-Item $PSScriptRoot/readme.md src/about_PS-Autoenv.help.txt
-Publish-Module -Path $PSScriptRoot/src -NuGetApiKey $env:PSNugetKey -Verbose
+Copy-Item $PSScriptRoot/readme.md $PSScriptRoot/ps-autoenv/about_PS-Autoenv.help.txt
+Publish-Module -Path $PSScriptRoot/ps-autoenv -NuGetApiKey $env:PSNugetKey -Verbose
