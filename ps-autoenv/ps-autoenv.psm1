@@ -75,7 +75,7 @@ function EnterDirectory($dir) {
 
 function AutoEnv($newDir) {
   try {
-    if ($newDir -eq $currentDir) {
+    if ($newDir.Path -eq $currentDir.Path) {
       return
     }
 
