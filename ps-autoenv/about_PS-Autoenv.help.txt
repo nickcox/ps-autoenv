@@ -16,7 +16,7 @@ Usage
 ==========
 ```
 PS> Import-Module ps-autoenv
-PS> echo "echo 'whoa'" > project/.autoenv
+PS> "echo 'whoa'" > project/.autoenv
 PS> cd project
 whoa
 ```
@@ -32,8 +32,9 @@ Configuration
 ============
 Update these properties of `$autoenv` at any time:
 
-* AUTH_FILE: Contains a list of authorized env files, defaults to ~/.autoenv_authorized
-* ENV_FILENAME: Name of the enter file, defaults to .autoenv
-* ENV_LEAVE_FILENAME: Name of the leave file, defaults to .autoenv.leave
+* AUTH_FILE: Location of a text file which contains a list of authorized env files;
+defaults to ~/.autoenv_authorized
+* ENV_FILENAME: Name of the enter file; defaults to .autoenv
+* ENV_LEAVE_FILENAME: Name of the leave file; defaults to .autoenv.leave
 * ENABLE_LEAVE: Set this to a non-falsy value in order to enable leave scripts
 * ASSUME_YES: Set this to $true to automatically authorize the initialization of new environments
